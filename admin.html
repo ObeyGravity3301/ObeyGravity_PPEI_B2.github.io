@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrative Information</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const members = document.querySelectorAll('.member-preview');
+            members.forEach((member, index) => {
+                member.addEventListener('mouseover', () => {
+                    if (index === 0) { // Hover on member1
+                        members[0].classList.add('move-left');   // member1 left
+                        members[1].classList.add('move-right');  // member2 right
+                        members[2].classList.add('move-right');  // member3 right
+                    } else if (index === 1) { // Hover on member2
+                        members[0].classList.add('move-left');   // member1 left
+                        members[1].classList.remove('move-left', 'move-right'); // member2 stays
+                        members[2].classList.add('move-right');  // member3 right
+                    } else if (index === 2) { // Hover on member3
+                        members[0].classList.add('move-left');   // member1 left
+                        members[1].classList.add('move-left');   // member2 left
+                        members[2].classList.add('move-right');  // member3 right
+                    }
+                });
+                member.addEventListener('mouseout', () => {
+                    members.forEach(m => {
+                        m.classList.remove('move-left', 'move-right'); // Reset all positions
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <a href="PPEI1-B2_G1E_Report.html">Home</a>
+        <a href="admin.html">Administrative Info</a>
+        <a href="field.html">Field of Activity</a>
+        <a href="job.html">Job of Interest</a>
+        <a href="skills.html">Transversal Skills</a>
+        <a href="approach.html">Information Approach</a>
+        <a href="original.html">Original Approach</a>
+        <a href="questionnaire.html">Interview Questionnaire</a>
+        <a href="interview.html">Interview Summary</a>
+        <a href="proof.html">Proof of Meetings</a>
+    </nav>
+
+    <!-- 标题和校徽区域 -->
+    <header class="admin-header">
+        <div class="small-logos">
+            <a href="https://www.universite-paris-saclay.fr/en">
+                <img src="images/paris-saclay-logo.png" alt="Université Paris-Saclay Logo" class="small-logo">
+            </a>
+            <a href="https://www.hust.edu.cn/">
+                <img src="images/hust-logo.png" alt="Huazhong University of Science and Technology Logo" class="small-logo">
+            </a>
+        </div>
+        <h1>Team Members</h1>
+    </header>
+
+    <!-- 页面内容 -->
+    <section>
+        <div class="team-members">
+            <!-- 成员1 -->
+            <div class="member-preview" data-member="1">
+                <div class="member-photos">
+                    <a href="member1-profile.html">
+                        <img src="images/member1.jpg" alt="Member 1" class="main-photo">
+                    </a>
+                    <img src="images/member1-photo1.jpg" alt="Member 1 Photo 1" class="extra-photo extra-photo-right">
+                    <img src="images/member1-photo2.jpg" alt="Member 1 Photo 2" class="extra-photo extra-photo-right-down">
+                    <img src="images/member1-photo3.jpg" alt="Member 1 Photo 3" class="extra-photo extra-photo-right">
+                    <img src="images/member1-photo4.jpg" alt="Member 1 Photo 4" class="extra-photo extra-photo-right-down">
+                </div>
+                <div class="member-info">Member 1: Project Coordinator</div>
+                <h3>Member 1</h3>
+                <p>Project Coordinator, PPEI1-B2_G1E</p>
+            </div>
+            <!-- 成员2 -->
+            <div class="member-preview" data-member="2">
+                <div class="member-photos">
+                    <a href="member2-profile.html">
+                        <img src="images/member2.jpg" alt="Member 2" class="main-photo">
+                    </a>
+                    <img src="images/member2-photo1.jpg" alt="Member 2 Photo 1" class="extra-photo extra-photo-left">
+                    <img src="images/member2-photo2.jpg" alt="Member 2 Photo 2" class="extra-photo extra-photo-right">
+                    <img src="images/member2-photo3.jpg" alt="Member 2 Photo 3" class="extra-photo extra-photo-down">
+                    <img src="images/member2-photo4.jpg" alt="Member 2 Photo 4" class="extra-photo extra-photo-down">
+                </div>
+                <div class="member-info">Member 2: Lead Researcher</div>
+                <h3>Member 2</h3>
+                <p>Lead Researcher, PPEI1-B2_G1E</p>
+            </div>
+            <!-- 成员3 -->
+            <div class="member-preview" data-member="3">
+                <div class="member-photos">
+                    <a href="member3-profile.html">
+                        <img src="images/member3.jpg" alt="Member 3" class="main-photo">
+                    </a>
+                    <img src="images/member3-photo1.jpg" alt="Member 3 Photo 1" class="extra-photo extra-photo-left">
+                    <img src="images/member3-photo2.jpg" alt="Member 3 Photo 2" class="extra-photo extra-photo-left-down">
+                    <img src="images/member3-photo3.jpg" alt="Member 3 Photo 3" class="extra-photo extra-photo-left">
+                    <img src="images/member3-photo4.jpg" alt="Member 3 Photo 4" class="extra-photo extra-photo-left-down">
+                </div>
+                <div class="member-info">Member 3: Designer</div>
+                <h3>Member 3</h3>
+                <p>Designer, PPEI1-B2_G1E</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 PPEI1-B2_G1E Team</p>
+    </footer>
+</body>
+</html>

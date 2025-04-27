@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    font-family: "Helvetica", sans-serif;
+    background-color: #e5ddd5;
+  }
+  
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 200vh; /* 确保页面有足够滚动空间 */
+    padding-top: 100px; /* 为固定标题和聊天框预留空间 */
+  }
+  
+  .page-title {
+    text-align: center;
+    margin: 0; /* 移除默认外边距 */
+    font-size: 28px;
+    color: #333;
+    position: fixed; /* 固定在页面顶部 */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #e5ddd5; /* 与页面背景色一致 */
+    z-index: 2; /* 确保标题在聊天框之上 */
+    padding: 20px 0; /* 调整内边距，保持美观 */
+    height: 40px; /* 固定高度，方便计算 */
+    line-height: 40px; /* 确保文字垂直居中 */
+  }
+  
+  .chat-display {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 30px;
+    width: 100%;
+  }
+  
+  .chat-container {
+    width: 350px;
+    height: auto; /* 内容自然撑开 */
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* 固定在页面顶部 */
+    top: 100px; /* 标题高度 (40px) + 标题内边距 (20px + 20px) + 额外间距 (20px) = 100px */
+    z-index: 1; /* 确保聊天框在滚动内容之上 */
+    overflow: visible; /* 确保圆角不被裁剪 */
+  }
+  
+  /* 内层容器，应用圆角样式 */
+  .chat-container-inner {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 20px; /* 保持圆角 */
+    display: flex;
+    flex-direction: column;
+    overflow: visible; /* 确保圆角不被裁剪 */
+    /* 移除调试边框 */
+  }
+  
+  /* 调整每个聊天框的水平位置 */
+  .chat-container:nth-child(1) {
+    left: calc(50% - 600px); /* 第一个聊天框居左 */
+  }
+  
+  .chat-container:nth-child(2) {
+    left: calc(50% - 175px); /* 第二个聊天框居中 */
+  }
+  
+  .chat-container:nth-child(3) {
+    left: calc(50% + 250px); /* 第三个聊天框居右 */
+  }
+  
+  .professor-name {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #888; /* 灰色 */
+  }
+  
+  .professor-link {
+    text-decoration: none;
+    color: #888;
+  }
+  
+  .professor-link:hover {
+    color: #4caf50; /* 鼠标悬停时变为绿色，与发送者气泡颜色一致 */
+  }
+  
+  .message {
+    display: flex;
+    align-items: flex-end;
+    margin: 10px 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .message.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .message.sent {
+    justify-content: flex-end;
+  }
+  
+  .message.received {
+    justify-content: flex-start;
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .avatar-link {
+    display: inline-block; /* 确保链接包裹头像 */
+  }
+  
+  .avatar-link:hover .avatar {
+    opacity: 0.8; /* 鼠标悬停时头像透明度降低 */
+  }
+  
+  .bubble {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin: 0 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    display: inline-block; /* 确保气泡可见 */
+  }
+  
+  .message.sent .bubble {
+    background-color: #9eea6a;
+    border-top-right-radius: 0;
+  }
+  
+  .message.received .bubble {
+    background-color: #ffffff;
+    border-top-left-radius: 0;
+  }
+  
+  .spacer {
+    height: 200vh; /* 增加页面高度，确保滚动空间 */
+  }
+  
+  .footer {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #e5ddd5; /* 与页面背景色一致 */
+  }
+  
+  .start-interview-button {
+    display: none;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .start-interview-button.visible {
+    display: inline-block;
+  }

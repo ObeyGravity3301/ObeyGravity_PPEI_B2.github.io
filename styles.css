@@ -1,0 +1,720 @@
+/* 基础样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* 视觉小说页面样式 */
+body.visual-novel {
+    background-color: #000;
+    overflow: auto;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* 16:9 比例容器 */
+.visual-novel .game-container {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    aspect-ratio: 16 / 9;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+/* 转场说明 */
+.scene-transition {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.scene-transition.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.time-bar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* 背景图片 */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+/* 导航栏样式 */
+nav {
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+    z-index: 3;
+    position: relative;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ddd;
+}
+
+/* 小Logo容器样式 */
+.small-logos {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* 小Logo样式 */
+.small-logo {
+    max-width: 80px; /* 缩小校徽尺寸 */
+    height: auto;
+    object-fit: contain;
+}
+
+/* 访谈预览样式 */
+.interview-previews {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.interview-preview {
+    text-align: center;
+    width: 200px;
+}
+
+.preview-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.interview-preview:hover .preview-photo {
+    transform: scale(1.05);
+}
+
+.interview-preview a {
+    text-decoration: none;
+    color: #333;
+}
+
+.interview-preview h3 {
+    margin: 10px 0 5px;
+}
+
+.interview-preview p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* 团队成员样式 */
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.member-preview {
+    text-align: center;
+    width: 200px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+/* 移动类 */
+.move-left {
+    transform: translateX(-120px) !important;
+}
+
+.move-right {
+    transform: translateX(120px) !important;
+}
+
+/* 成员照片容器 */
+.member-photos {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: visible;
+    z-index: 5;
+}
+
+/* 主照片 */
+.main-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    z-index: 2; /* 主照片在额外照片之上 */
+}
+
+.member-preview:hover .main-photo {
+    transform: scale(1.05);
+}
+
+/* 额外照片 */
+.extra-photo {
+    position: absolute;
+    width: 120px; /* 增大照片尺寸 */
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1; /* 在主照片之下 */
+    top: 50%;
+    left: 48%; /* 修正爆炸中心 */
+    transform: translate(-50%, -50%);
+}
+
+/* Member 1: 向右和右下推出 */
+[data-member="1"] .extra-photo-right {
+    transform: translate(0, 0);
+}
+
+[data-member="1"] .extra-photo-right-down {
+    transform: translate(0, 0);
+}
+
+[data-member="1"]:hover .extra-photo-right {
+    transform: translate(150px, 0); /* 增大推出距离 */
+    opacity: 1;
+}
+
+[data-member="1"]:hover .extra-photo-right-down {
+    transform: translate(150px, 150px); /* 增大推出距离 */
+    opacity: 1;
+}
+
+/* Member 3: 向左和左下推出 */
+[data-member="3"] .extra-photo-left {
+    transform: translate(0, 0);
+}
+
+[data-member="3"] .extra-photo-left-down {
+    transform: translate(0, 0);
+}
+
+[data-member="3"]:hover .extra-photo-left {
+    transform: translate(-150px, 0); /* 增大推出距离 */
+    opacity: 1;
+}
+
+[data-member="3"]:hover .extra-photo-left-down {
+    transform: translate(-150px, 150px); /* 增大推出距离 */
+    opacity: 1;
+}
+
+/* Member 2: 向两边和下面推出 */
+[data-member="2"] .extra-photo-left {
+    transform: translate(0, 0);
+}
+
+[data-member="2"] .extra-photo-right {
+    transform: translate(0, 0);
+}
+
+[data-member="2"] .extra-photo-down {
+    transform: translate(0, 0);
+}
+
+[data-member="2"]:hover .extra-photo-left {
+    transform: translate(-150px, 0); /* 增大推出距离 */
+    opacity: 1;
+}
+
+[data-member="2"]:hover .extra-photo-right {
+    transform: translate(150px, 0); /* 增大推出距离 */
+    opacity: 1;
+}
+
+[data-member="2"]:hover .extra-photo-down {
+    transform: translate(0, 150px); /* 增大推出距离 */
+    opacity: 1;
+}
+
+/* 悬停信息 */
+.member-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-size: 14px;
+    z-index: 3;
+}
+
+.member-preview:hover .member-info {
+    opacity: 1;
+}
+
+.member-preview h3 {
+    margin: 10px 0 5px;
+}
+
+.member-preview p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* 主页 Logo 容器样式 */
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+/* 主页 Logo 样式 */
+.logo {
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* 主页 Logo 来源说明样式 */
+.logo-source {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* 主页小组合影样式 */
+.group-photo-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.group-photo {
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.group-photo-caption {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* 说话人立绘 */
+.characters {
+    position: absolute;
+    bottom: 150px;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.character {
+    position: relative;
+    transition: all 0.5s ease, opacity 0.5s ease;
+}
+
+.character-image {
+    width: 200px;
+    height: calc(100vh * 0.5);
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.character-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-size: 14px;
+}
+
+.character:hover .character-info {
+    opacity: 1;
+}
+
+/* 立绘位置样式 */
+.character.center {
+    transform: translateX(0);
+}
+
+.character.left {
+    transform: translateX(-200px);
+}
+
+.character.right {
+    transform: translateX(200px);
+}
+
+/* 未说话人物半透明 */
+.character.not-speaking {
+    opacity: 0.5;
+}
+
+/* 对话选项 */
+.options {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 3;
+}
+
+.option {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.option:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* 对话框 */
+.dialogue-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 3;
+    min-height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dialogue-content {
+    flex: 1;
+}
+
+.speaker-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.dialogue-text {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* 标题和校徽布局 */
+.admin-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.admin-header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 其他样式 */
+header {
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    z-index: 3;
+    position: relative;
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    margin: 20px 0;
+}
+
+h2 a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+h2 a:hover {
+    text-decoration: underline;
+}
+
+h3 {
+    margin: 10px 0;
+}
+
+p {
+    line-height: 1.6;
+    margin: 10px 20px;
+}
+
+section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+}
+
+/* 成员名片样式 */
+.profile-card {
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.profile-card h2 {
+    margin: 10px 0;
+}
+
+.profile-card p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    .small-logos {
+        position: static;
+        justify-content: center;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .small-logo {
+        max-width: 60px;
+    }
+
+    .logos {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        max-width: 150px;
+    }
+
+    .group-photo {
+        max-width: 300px;
+    }
+
+    .interview-preview {
+        width: 150px;
+    }
+
+    .preview-photo {
+        height: 150px;
+    }
+
+    .team-members {
+        gap: 20px;
+    }
+
+    .member-preview {
+        width: 150px;
+    }
+
+    .member-photos {
+        height: 200px;
+    }
+
+    .main-photo {
+        height: 100%;
+    }
+
+    .extra-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    [data-member="1"]:hover .extra-photo-right {
+        transform: translate(100px, 0);
+    }
+
+    [data-member="1"]:hover .extra-photo-right-down {
+        transform: translate(100px, 100px);
+    }
+
+    [data-member="3"]:hover .extra-photo-left {
+        transform: translate(-100px, 0);
+    }
+
+    [data-member="3"]:hover .extra-photo-left-down {
+        transform: translate(-100px, 100px);
+    }
+
+    [data-member="2"]:hover .extra-photo-left {
+        transform: translate(-100px, 0);
+    }
+
+    [data-member="2"]:hover .extra-photo-right {
+        transform: translate(100px, 0);
+    }
+
+    [data-member="2"]:hover .extra-photo-down {
+        transform: translate(0, 100px);
+    }
+
+    .characters {
+        gap: 10px;
+        bottom: 200px;
+    }
+
+    .character-image {
+        width: 120px;
+        height: calc(100vh * 0.5 * 0.8);
+    }
+
+    .character.left {
+        transform: translateX(-120px);
+    }
+
+    .character.right {
+        transform: translateX(120px);
+    }
+
+    .options {
+        width: 90%;
+    }
+
+    .option {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .dialogue-box {
+        padding: 15px;
+        min-height: 120px;
+    }
+
+    .speaker-name {
+        font-size: 16px;
+    }
+
+    .dialogue-text {
+        font-size: 14px;
+    }
+
+    .time-bar {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .admin-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .admin-header h1 {
+        position: static;
+        transform: none;
+        font-size: 20px;
+    }
+}
