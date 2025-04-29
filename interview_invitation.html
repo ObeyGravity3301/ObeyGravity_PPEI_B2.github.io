@@ -7,135 +7,152 @@
   <link rel="stylesheet" href="interview_styles.css">
 </head>
 <body>
-  <div class="main-container">
+  <!-- 添加索引栏 -->
+  <nav id="nav">
+    <a href="index.html">Home</a>
+    <a href="admin.html">The Team</a>
+    <a href="interview_invitation.html" class="active">Invitation & Interview</a>
+    <a href="personal_summary.html">Skills & Summary</a>
+    <a href="ed.html">End</a>
+  </nav>
+
+  <!-- 主内容容器 -->
+  <div class="main-container" style="margin-top: 80px;"> <!-- 添加 margin-top -->
     <h1 class="page-title">Invitation</h1>
     
     <div class="chat-display">
-      <!-- Chat 1 -->
+      <!-- 最左边聊天框 -->
       <div class="chat-container">
         <div class="chat-container-inner">
           <div class="professor-name">
-            <a href="professor1.html" class="professor-link">Dr.ShenWANG</a>
-          </div>
-          <div class="message received">
-            <a href="professor1.html" class="avatar-link">
-              <img src="images/professor1-avatar.png" class="avatar">
-            </a>
-            <div class="bubble">你好，请问你想聊点什么？</div>
+            <a href="http://faculty.hust.edu.cn/WangShen/en/index.htm" target="_blank" class="professor-link">ShenWANG</a>
           </div>
           <div class="message sent">
-            <div class="bubble">老师您好，想和您约一个采访时间。</div>
-            <a href="interviewer1.html" class="avatar-link">
+            <div class="bubble">Could you spare some time tomorrow morning, Professor?</div>
+            <a href="member1-profile.html" class="avatar-link">
               <img src="images/interviewer1-avatar.png" class="avatar">
             </a>
           </div>
           <div class="message received">
-            <a href="professor1.html" class="avatar-link">
+            <a href="http://faculty.hust.edu.cn/WangShen/en/index.htm" target="_blank" class="avatar-link">
               <img src="images/professor1-avatar.png" class="avatar">
             </a>
-            <div class="bubble">这个周三下午三点怎么样？</div>
+            <div class="bubble">Yes, I have some time.</div>
           </div>
           <div class="message sent">
-            <div class="bubble">可以的，谢谢您！</div>
-            <a href="interviewer1.html" class="avatar-link">
+            <div class="bubble">Would it be convenient for me to come by at 8:10 AM tomorrow?</div>
+            <a href="member1-profile.html" class="avatar-link">
               <img src="images/interviewer1-avatar.png" class="avatar">
             </a>
           </div>
           <div class="message received">
-            <a href="professor1.html" class="avatar-link">
+            <a href="http://faculty.hust.edu.cn/WangShen/en/index.htm" target="_blank" class="avatar-link">
               <img src="images/professor1-avatar.png" class="avatar">
             </a>
-            <div class="bubble">那就定了，期待我们的交流。</div>
+            <div class="bubble">It's fine if it's a bit later, say around 9 AM.</div>
           </div>
           <div class="message sent">
-            <div class="bubble">好的老师，我们周三见！</div>
-            <a href="interviewer1.html" class="avatar-link">
+            <div class="bubble">Alright.</div>
+            <a href="member1-profile.html" class="avatar-link">
               <img src="images/interviewer1-avatar.png" class="avatar">
             </a>
+          </div>
+          <!-- 更新后的消息 -->
+          <div class="message sent">
+            <div class="bubble">Ok and, It would take about 15 minutes, mainly about your life in scientific research. I can also send you a Chinese version.</div>
+            <a href="member1-profile.html" class="avatar-link">
+              <img src="images/interviewer1-avatar.png" class="avatar">
+            </a>
+          </div>
+          <div class="message received">
+            <a href="http://faculty.hust.edu.cn/WangShen/en/index.htm" target="_blank" class="avatar-link">
+              <img src="images/professor1-avatar.png" class="avatar">
+            </a>
+            <div class="bubble">Ok, see you tomorrow.</div>
           </div>
         </div>
       </div>
 
-      <!-- Chat 2 -->
+      <!-- 中间聊天框 -->
       <div class="chat-container">
         <div class="chat-container-inner">
           <div class="professor-name">
-            <a href="professor2.html" class="professor-link">Dr.ZhaohuiTANG</a>
+            <a href="https://xueshu.baidu.com/scholarID/CN-B2HAWE6K" target="_blank" class="professor-link">ZhaohuiTANG</a>
           </div>
           <div class="message sent">
-            <div class="bubble">老师，您好，您什么时候方便接受采访？</div>
-            <a href="interviewer2.html" class="avatar-link">
+            <div class="bubble">Hello, I am Chen Zifeng from the 2301 class of the School of Life Sciences.</div>
+            <a href="member2-profile.html" class="avatar-link">
+              <img src="images/interviewer2-avatar.png" class="avatar">
+            </a>
+          </div>
+          <div class="message sent">
+            <div class="bubble">Our course requires each group to interview three professionals. Could you please spare about 15 minutes to accept our interview before May 1st? Here is our weekly schedule.</div>
+            <a href="member2-profile.html" class="avatar-link">
               <img src="images/interviewer2-avatar.png" class="avatar">
             </a>
           </div>
           <div class="message received">
-            <a href="professor2.html" class="avatar-link">
+            <a href="https://xueshu.baidu.com/scholarID/CN-B2HAWE6K" target="_blank" class="avatar-link">
               <img src="images/professor2-avatar.png" class="avatar">
             </a>
-            <div class="bubble">下周一上午十点可以吗？</div>
-          </div>
-          <div class="message sent">
-            <div class="bubble">没问题，已经记下了。</div>
-            <a href="interviewer2.html" class="avatar-link">
-              <img src="images/interviewer2-avatar.png" class="avatar">
-            </a>
+            <div class="bubble">How about Thursday morning?</div>
           </div>
           <div class="message received">
-            <a href="professor2.html" class="avatar-link">
+            <a href="https://xueshu.baidu.com/scholarID/CN-B2HAWE6K" target="_blank" class="avatar-link">
               <img src="images/professor2-avatar.png" class="avatar">
             </a>
-            <div class="bubble">需要我准备什么材料吗？</div>
-          </div>
-          <div class="message sent">
-            <div class="bubble">不用，随意聊聊您的研究方向和教学经验就好。</div>
-            <a href="interviewer2.html" class="avatar-link">
-              <img src="images/interviewer2-avatar.png" class="avatar">
-            </a>
+            <div class="bubble">After your class, come directly to room 504 on the 12th of east to find me.</div>
           </div>
         </div>
       </div>
 
-      <!-- Chat 3 -->
+      <!-- 最右边聊天框 -->
       <div class="chat-container">
         <div class="chat-container-inner">
           <div class="professor-name">
-            <a href="professor3.html" class="professor-link">Dr.YunBAI</a>
-          </div>
-          <div class="message received">
-            <a href="professor3.html" class="avatar-link">
-              <img src="images/professor3-avatar.png" class="avatar">
-            </a>
-            <div class="bubble">你有采访提纲吗？</div>
+            <a href="http://faculty.hust.edu.cn/BAIYUN/en/index.htm" target="_blank" class="professor-link">YunBAI</a>
           </div>
           <div class="message sent">
-            <div class="bubble">有的，我稍后会发一份到您邮箱。</div>
-            <a href="interviewer3.html" class="avatar-link">
+            <div class="bubble">Could you spare some time tomorrow, as I have classes today?</div>
+            <a href="member3-profile.html" class="avatar-link">
               <img src="images/interviewer3-avatar.png" class="avatar">
             </a>
           </div>
           <div class="message received">
-            <a href="professor3.html" class="avatar-link">
+            <a href="http://faculty.hust.edu.cn/BAIYUN/en/index.htm" target="_blank" class="avatar-link">
               <img src="images/professor3-avatar.png" class="avatar">
             </a>
-            <div class="bubble">那我们明天下午两点见。</div>
+            <div class="bubble">Sure.</div>
+          </div>
+          <div class="message received">
+            <a href="http://faculty.hust.edu.cn/BAIYUN/en/index.htm" target="_blank" class="avatar-link">
+              <img src="images/professor3-avatar.png" class="avatar">
+            </a>
+            <div class="bubble">Tomorrow my schedule is flexible. You can set a time, and I'll reserve it.</div>
           </div>
           <div class="message sent">
-            <div class="bubble">好的老师，明天下午见！</div>
-            <a href="interviewer3.html" class="avatar-link">
+            <div class="bubble">How about 10 or 11 AM tomorrow? I'll bring two group members to meet you.</div>
+            <a href="member3-profile.html" class="avatar-link">
               <img src="images/interviewer3-avatar.png" class="avatar">
             </a>
           </div>
           <div class="message received">
-            <a href="professor3.html" class="avatar-link">
+            <a href="http://faculty.hust.edu.cn/BAIYUN/en/index.htm" target="_blank" class="avatar-link">
               <img src="images/professor3-avatar.png" class="avatar">
             </a>
-            <div class="bubble">准时哟，我只有半小时时间。</div>
+            <div class="bubble">10 AM works. I have something at 11.</div>
           </div>
           <div class="message sent">
-            <div class="bubble">明白，我会准时的。</div>
-            <a href="interviewer3.html" class="avatar-link">
+            <div class="bubble">Alright, but we might be about 15 minutes late.</div>
+            <a href="member3-profile.html" class="avatar-link">
               <img src="images/interviewer3-avatar.png" class="avatar">
             </a>
+          </div>
+          <div class="message received">
+            <a href="http://faculty.hust.edu.cn/BAIYUN/en/index.htm" target="_blank" class="avatar-link">
+              <img src="images/professor3-avatar.png" class="avatar">
+            </a>
+            <div class="bubble">That's fine.</div>
           </div>
         </div>
       </div>

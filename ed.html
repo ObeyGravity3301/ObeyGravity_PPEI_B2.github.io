@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="0;url=start.html"> <!-- Redirect to start.html -->
+  <title>Redirecting to End</title>
+  <style>
+    /* Minimal styles for fallback */
+    body {
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    nav {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 25px;
+      font-size: 18px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    nav a:hover {
+      background-color: rgba(243, 156, 18, 0.2);
+      transform: translateY(-2px);
+    }
+    nav a.active {
+      background-color: rgba(243, 156, 18, 0.4);
+    }
+    p {
+      font-size: 24px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav id="nav">
+    <a href="index.html">Home</a>
+    <a href="admin.html">The Team</a>
+    <a href="interview_invitation.html">Invitation & Interview</a>
+    <a href="personal_summary.html">Skills & Summary</a>
+    <a href="ed.html" class="active">End</a>
+  </nav>
+
+  <!-- Fallback content -->
+  <p>Redirecting to the End page... If not redirected, <a href="start.html">click here</a>.</p>
+</body>
+</html>

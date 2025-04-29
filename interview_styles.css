@@ -9,6 +9,7 @@ body {
     flex-direction: column;
     min-height: 200vh; /* 确保页面有足够滚动空间 */
     padding-top: 100px; /* 为固定标题和聊天框预留空间 */
+    margin-top: 120px; /* 从 80px 增加到 120px，内容下移更多 */
   }
   
   .page-title {
@@ -175,4 +176,35 @@ body {
   
   .start-interview-button.visible {
     display: inline-block;
+  }
+
+  #nav {
+    position: fixed;
+    top: 1%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* 保持右对齐 */
+    gap: 25px;
+    background-color: transparent; /* 背景透明 */
+    padding: 10px -30px; /* 将右侧内边距从 20px 改为 40px，稍微往左挪 */
+    z-index: 10;
+  }
+  
+  #nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  #nav a:hover {
+    background-color: rgba(243, 156, 18, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  #nav a.active {
+    background-color: rgba(243, 156, 18, 0.5);
   }

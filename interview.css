@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* 使用 interview_background.jpg 作为背景 */
+    background: url('images/interview_background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;  /* 去掉滚动条 */
+}
+
+/* 导航栏样式 */
+#nav {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 25px;
+    font-size: 18px;
+    z-index: 10;
+    background-color: transparent; /* 背景透明 */
+}
+
+#nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#nav a:hover {
+    background-color: rgba(243, 156, 18, 0.2);
+    transform: translateY(-2px);
+}
+
+#nav a.active {
+    background-color: rgba(243, 156, 18, 0.4);
+}
+
+.small-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.small-logo {
+    height: 80px;
+}
+
+header {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #ffffff;
+}
+
+header h1 {
+    font-size: 36px;
+    color: #2c3e50;
+}
+
+/* 居中中间预览栏 */
+section {
+    margin-top: 0 !important; /* 去掉 HTML 内联 margin-top */
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* 水平居中 */
+    padding: 40px 20px;
+}
+
+section h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.interview-previews {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.interview-preview {
+    background: rgba(255, 255, 255, 0.6); /* 白色背景，透明度 0.6 */
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    font-family: 'Segoe UI', Arial, sans-serif; /* 修改框内文字字体 */
+}
+
+.interview-preview:hover {
+    transform: translateY(-5px);
+}
+
+.preview-photo {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.interview-preview h3,
+.interview-preview p {
+    font-family: 'Segoe UI', Arial, sans-serif; /* 设置字体 */
+    text-decoration: none; /* 去掉下划线 */
+    color: #555; /* 灰色 */
+    font-weight: bold; /* 加粗 */
+}
+
+/* 去掉页脚 */
+footer {
+    display: none;
+}

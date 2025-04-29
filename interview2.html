@@ -1,86 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview 2 - Professional 2</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview 2</title>
+  <link rel="stylesheet" href="interview2.css">
 </head>
-<body class="visual-novel">
-    <!-- 导航栏 -->
-    <nav>
-        <a href="PPEI1-B2_G1E_Report.html">Home</a>
-        <a href="admin.html">Administrative Info</a>
-        <a href="field.html">Field of Activity</a>
-        <a href="job.html">Job of Interest</a>
-        <a href="skills.html">Transversal Skills</a>
-        <a href="approach.html">Information Approach</a>
-        <a href="original.html">Original Approach</a>
-        <a href="questionnaire.html">Interview Questionnaire</a>
-        <a href="interview.html">Interview Summary</a>
-        <a href="proof.html">Proof of Meetings</a>
-    </nav>
-
-    <!-- 小Logo区域 -->
-    <div class="small-logos">
-        <img src="images/paris-saclay-logo.png" alt="Université Paris-Saclay Logo" class="small-logo">
-        <img src="images/hust-logo.png" alt="Huazhong University of Science and Technology Logo" class="small-logo">
+<body>
+  <!-- Intro Screen -->
+  <div id="intro-screen">
+    <div class="intro-text">
+      Time: April 24, 2025, 10:00 AM<br>
+      Location: Genetics Laboratory Classroom
     </div>
+  </div>
 
-    <!-- 视觉小说容器 -->
-    <div class="game-container" onclick="handleClick()">
-        <!-- 转场说明 -->
-        <div class="scene-transition" id="scene-transition">
-            <div class="time-bar" id="time-bar">April 25, 2025 - Marketing Agency Office</div>
-        </div>
+  <!-- Navigation Bar -->
+  <nav id="nav" class="hidden">
+    <a href="index.html">Home</a>
+    <a href="admin.html">The Team</a>
+    <a href="interview_invitation.html" class="active">Invitation & Interview</a>
+    <a href="personal_summary.html">Skills & Summary</a>
+    <a href="ed.html">End</a>
+  </nav>
 
-        <!-- 背景图片 -->
-        <div class="background">
-            <img src="images/interview-background.jpg" alt="Interview Background" class="background-image">
-        </div>
+  <!-- Dialogue Box -->
+  <div id="dialogue-box" class="hidden">
+    <div id="name-tag">Speaker Name</div>
+    <div id="dialogue-text"></div>
+  </div>
 
-        <!-- 说话人立绘 -->
-        <div class="characters">
-            <div class="character" id="character1">
-                <img src="images/professional2.png" alt="Professional 2" class="character-image">
-                <div class="character-info">Professional 2: Marketing Manager</div>
-            </div>
-            <div class="character" id="character2" style="display: none;">
-                <img src="images/interviewer1.png" alt="Interviewer 1" class="character-image">
-                <div class="character-info">Interviewer 1: Researcher, PPEI1-B2_G1E</div>
-            </div>
-            <div class="character" id="character3" style="display: none;">
-                <img src="images/interviewer2.png" alt="Interviewer 2" class="character-image">
-                <div class="character-info">Interviewer 2: Designer, PPEI1-B2_G1E</div>
-            </div>
-            <div class="character" id="character4" style="display: none;">
-                <img src="images/interviewer3.png" alt="Interviewer 3" class="character-image">
-                <div class="character-info">Interviewer 3: Team Leader, PPEI1-B2_G1E</div>
-            </div>
-        </div>
+  <!-- Options Container -->
+  <div id="options-container" class="hidden"></div>
 
-        <!-- 对话选项 -->
-        <div class="options" id="options" style="display: none;">
-            <button class="option" onclick="showDialogue(1)">Can you tell us about your role?</button>
-            <button class="option" onclick="showDialogue(2)">What skills are most important for your job?</button>
-            <button class="option" onclick="showDialogue(3)">What challenges do you face in your role?</button>
-            <button class="option" onclick="showDialogue(4)">What advice do you have for students?</button>
-            <button class="option" onclick="showDialogue(5)">How did you get started in this field?</button>
-        </div>
+  <!-- Character Sprites with Info -->
+  <div id="character-left" class="character hidden">
+    <div class="character-info"></div>
+  </div>
+  <div id="character-center" class="character hidden">
+    <div class="character-info"></div>
+  </div>
+  <div id="character-right" class="character hidden">
+    <div class="character-info"></div>
+  </div>
 
-        <!-- 对话框 -->
-        <div class="dialogue-box" id="dialogue-box" style="display: none;">
-            <div class="dialogue-content" id="dialogue-content">
-                <div class="speaker-name" id="speaker-name"></div>
-                <div class="dialogue-text" id="dialogue-text"></div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2025 PPEI1-B2_G1E Team</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="interview2.js"></script>
 </body>
 </html>

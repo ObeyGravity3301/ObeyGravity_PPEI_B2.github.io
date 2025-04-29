@@ -1,0 +1,235 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body with background image */
+  body {
+    background-image: url('images/interview-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+  
+  /* Intro Screen */
+  #intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 1s ease; /* Fade-out animation */
+  }
+  
+  #intro-screen.fade-out {
+    opacity: 0;
+  }
+  
+  .intro-text {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.5;
+  }
+  
+  /* Navigation Bar */
+  nav {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 25px;
+    font-size: 18px;
+    z-index: 10;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  nav a:hover {
+    background-color: rgba(243, 156, 18, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  nav a.active {
+    background-color: rgba(243, 156, 18, 0.4);
+  }
+  
+  /* Dialogue Box */
+  #dialogue-box {
+    position: fixed;
+    bottom: 20px;
+    left: 5%;
+    width: 90%;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Name Tag */
+  #name-tag {
+    position: absolute;
+    top: -35px;
+    left: 20px;
+    background-color: rgba(243, 156, 18, 0.8);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    min-width: 120px; /* Ensure enough space for longer names like ShenWANG */
+    text-align: center;
+  }
+  
+  /* Dialogue Text */
+  #dialogue-text {
+    font-size: 22px;
+    line-height: 1.6;
+    white-space: pre-wrap; /* Preserve spaces and line breaks */
+  }
+  
+  /* Options Container */
+  #options-container {
+    position: fixed;
+    bottom: 240px; /* Above dialogue box for question1 */
+    left: 20%; /* Center with 60% width */
+    width: 60%; /* Reduced from 90% to 2/3 */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 6;
+    background-color: transparent; /* No background when hidden */
+  }
+  
+  /* Visible state for options container */
+  #options-container.visible {
+    background-color: transparent; /* No dark background */
+    /* No padding */
+  }
+  
+  /* Vertical center for finalQuestion */
+  #options-container.vertical-center {
+    bottom: auto; /* Override bottom positioning */
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20%; /* Maintain centering with 60% width */
+    width: 60%;
+  }
+  
+  /* Option Button */
+  .option {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center; /* Center text */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .option:hover {
+    background-color: rgba(243, 156, 18, 0.8);
+    transform: translateY(-2px);
+  }
+  
+  .option.selected {
+    background-color: rgba(100, 100, 100, 0.8); /* Gray for selected options */
+    color: white;
+    cursor: default;
+  }
+  
+  .option.selected:hover {
+    background-color: rgba(100, 100, 100, 0.8);
+    transform: none;
+  }
+  
+  /* Hidden state */
+  .hidden {
+    display: none;
+  }
+  
+  /* Character Sprites */
+  .character {
+    position: absolute;
+    bottom: calc(240px - 20vh); /* Move down 20% of viewport height */
+    width: 300px; /* Adjust based on your sprite size */
+    height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0; /* Start hidden for fade-in */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Fade and move smoothly */
+    z-index: 2; /* Below dialogue-box (5) and options-container (6) */
+  }
+  
+  /* Positioning for sprites */
+  #character-left {
+    left: 10%;
+    transform: translateX(0);
+  }
+  
+  #character-center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  #character-right {
+    right: 10%;
+    transform: translateX(0);
+  }
+  
+  /* Visible state */
+  .character.visible {
+    opacity: 1;
+  }
+  
+  /* Dimmed state for non-active speaker */
+  .character.dimmed {
+    opacity: 0.5; /* Slightly transparent */
+  }
+  
+  /* Character Info Box */
+  .character-info {
+    position: absolute;
+    top: -100px; /* Above the sprite */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px; /* Increased to fit longer description */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none; /* Prevent interaction with info box */
+    transition: opacity 0.3s ease;
+    z-index: 7; /* Above character and dialogue-box */
+  }
+  
+  .character:hover .character-info {
+    opacity: 1; /* Show on hover */
+  }

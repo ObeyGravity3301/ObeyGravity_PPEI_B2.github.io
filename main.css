@@ -1,0 +1,72 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body with background image */
+body {
+  overflow: hidden;
+  background-image: url('./images/StarWars.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  perspective: 800px;
+  font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+nav {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 25px;
+  font-size: 18px;
+  z-index: 10;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(243, 156, 18, 0.2);
+  transform: translateY(-2px);
+}
+
+nav a.active {
+  background-color: rgba(243, 156, 18, 0.4);
+}
+
+/* Subtitle */
+#subtitle {
+  width: 800px;
+  position: absolute;
+  left: 50%;
+  margin-left: -400px;
+  line-height: 48px;
+  font-size: 24px;
+  color: orange;
+  font-weight: bolder;
+  text-rendering: optimizeLegibility;
+  text-align: center; /* Center text for better readability */
+  z-index: 5; /* Ensure above background */
+  opacity: 1; /* Ensure visible */
+  visibility: visible; /* Ensure not hidden */
+}
+
+/* Image */
+#fulan-university {
+  display: block;
+  margin: 0 auto;
+  width: 800px;
+  height: 400px;
+}
